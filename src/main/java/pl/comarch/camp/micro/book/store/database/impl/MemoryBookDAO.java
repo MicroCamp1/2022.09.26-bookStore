@@ -46,7 +46,7 @@ public class MemoryBookDAO implements IBookDAO {
     @Override
     public Optional<Book> getBookById(int id) {
         for(Book book : this.bookList) {
-            if (book.id() == id) {
+            if (book.getId() == id) {
                 return Optional.of(book);
             }
         }

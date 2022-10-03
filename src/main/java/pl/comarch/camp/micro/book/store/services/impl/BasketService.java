@@ -23,7 +23,7 @@ public class BasketService implements IBasketService {
     @Override
     public void addBookToBasket(int id) {
         for(Position position : this.sessionObject.getBasket()) {
-            if(position.getBook().id() == id) {
+            if(position.getBook().getId() == id) {
                 position.incrementQuantity();
                 return;
             }
@@ -43,7 +43,7 @@ public class BasketService implements IBasketService {
     public double calculateBasketSum() {
         double sum = 0.0;
         for(Position position : this.sessionObject.getBasket()) {
-            sum += position.getQuantity() * position.getBook().price();
+            sum += position.getQuantity() * position.getBook().getPrice();
         }
         return sum;
     }

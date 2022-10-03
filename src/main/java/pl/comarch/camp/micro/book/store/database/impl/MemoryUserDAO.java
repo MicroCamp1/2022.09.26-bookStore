@@ -29,4 +29,9 @@ public class MemoryUserDAO implements IUserDAO {
 
         return Optional.empty();
     }
+
+    @Override
+    public void persistUser(User user) {
+        this.users.add(user);
+    }
 }

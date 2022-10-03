@@ -10,7 +10,7 @@ import lombok.experimental.Accessors;
 @AllArgsConstructor
 @ToString
 @EqualsAndHashCode
-@Accessors(fluent = true)
+//@Accessors(fluent = true)
 @Builder
 //@Log4j2
 public class Book {
