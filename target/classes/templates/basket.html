@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<div th:replace="fragments.html :: menu"></div>
+
+<div class="position" th:each="position : ${basket}">
+    <div th:text="${position.book.title}"></div>
+    <div th:text="${position.book.price}"></div>
+    <div th:text="${position.quantity}"></div>
+    <div th:text="${#numbers.formatDecimal(position.quantity * position.book.price, 0, 2)}"></div>
+</div>
+<div th:if="${!basket.isEmpty()}" th:text="${#numbers.formatDecimal(basketSum, 0, 2)}"></div>
+<div th:if="${basket.isEmpty()}">Koszyk jest pusty !!</div>
+</body>
+</html>
