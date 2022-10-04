@@ -5,25 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="50deea2d-e7f5-464e-804f-ebee92578d4c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/comarch/camp/micro/book/store/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/comarch/camp/micro/book/store/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/comarch/camp/micro/book/store/controllers/AuthenticationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/comarch/camp/micro/book/store/controllers/AuthenticationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/comarch/camp/micro/book/store/database/IUserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/comarch/camp/micro/book/store/database/IUserDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/comarch/camp/micro/book/store/database/impl/MemoryBookDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/comarch/camp/micro/book/store/database/impl/MemoryBookDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/comarch/camp/micro/book/store/database/impl/MemoryUserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/comarch/camp/micro/book/store/database/impl/MemoryUserDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/comarch/camp/micro/book/store/model/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/comarch/camp/micro/book/store/model/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/comarch/camp/micro/book/store/services/impl/BasketService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/comarch/camp/micro/book/store/services/impl/BasketService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/comarch/camp/micro/book/store/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/comarch/camp/micro/book/store/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/comarch/camp/micro/book/store/controllers/AuthenticationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/comarch/camp/micro/book/store/controllers/AuthenticationController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/comarch/camp/micro/book/store/database/IUserDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/comarch/camp/micro/book/store/database/IUserDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/comarch/camp/micro/book/store/database/impl/MemoryBookDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/comarch/camp/micro/book/store/database/impl/MemoryBookDAO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/pl/comarch/camp/micro/book/store/database/impl/MemoryUserDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/comarch/camp/micro/book/store/database/impl/MemoryUserDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/comarch/camp/micro/book/store/model/Book.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/comarch/camp/micro/book/store/model/Book.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/comarch/camp/micro/book/store/services/impl/BasketService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/comarch/camp/micro/book/store/services/impl/BasketService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -390,10 +375,13 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "E:/MicroCamp1/2022.09.26-bookStore/pom.xml"
+    "last_opened_file_path": "E:/MicroCamp1/2022.09.26-bookStore/pom.xml",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.BasketServiceTest">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="pl.comarch.camp.micro.book.store.App" />
       <module name="bookStore" />
@@ -407,8 +395,73 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="AuthenticationServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="bookStore" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pl.comarch.camp.micro.book.store.services.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pl.comarch.camp.micro.book.store.services.impl" />
+      <option name="MAIN_CLASS_NAME" value="pl.comarch.camp.micro.book.store.services.impl.AuthenticationServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BasketServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="bookStore" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pl.comarch.camp.micro.book.store.services.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pl.comarch.camp.micro.book.store.services.impl" />
+      <option name="MAIN_CLASS_NAME" value="pl.comarch.camp.micro.book.store.services.impl.BasketServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BasketServiceTest.addExistingBookToBasketTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="bookStore" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pl.comarch.camp.micro.book.store.services.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pl.comarch.camp.micro.book.store.services.impl" />
+      <option name="MAIN_CLASS_NAME" value="pl.comarch.camp.micro.book.store.services.impl.BasketServiceTest" />
+      <option name="METHOD_NAME" value="addExistingBookToBasketTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserDataValidatorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="bookStore" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="pl.comarch.camp.micro.book.store.validators.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="pl.comarch.camp.micro.book.store.validators" />
+      <option name="MAIN_CLASS_NAME" value="pl.comarch.camp.micro.book.store.validators.UserDataValidatorTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.BasketServiceTest" />
+        <item itemvalue="JUnit.BasketServiceTest.addExistingBookToBasketTest" />
+        <item itemvalue="JUnit.AuthenticationServiceTest" />
+        <item itemvalue="JUnit.UserDataValidatorTest" />
         <item itemvalue="Application.App" />
       </list>
     </recent_temporary>

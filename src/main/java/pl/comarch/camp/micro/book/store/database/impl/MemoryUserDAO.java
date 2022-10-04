@@ -16,7 +16,6 @@ public class MemoryUserDAO implements IUserDAO {
     public MemoryUserDAO() {
         this.users.add(new User("admin", DigestUtils.md5Hex("admin")));
         this.users.add(new User("mateusz", DigestUtils.md5Hex("mateusz")));
-
     }
 
     @Override
