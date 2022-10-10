@@ -17,25 +17,29 @@ public class MemoryBookDAO implements IBookDAO {
         this.bookList.add(
                 Book.builder()
                         .id(1).title("Tytul1")
-                        .author("Author1").isbn("13-123-123")
+//                        .author("Author1")
+                        .isbn("13-123-123")
                         .price(33.33).build());
 
         this.bookList.add(
                 Book.builder()
                         .id(2).title("Tytul2")
-                        .author("Author2").isbn("13-123-1234")
+//                        .author("Author2")
+                        .isbn("13-123-1234")
                         .price(323.33).build());
 
         this.bookList.add(
                 Book.builder()
                         .id(3).title("Tytul3")
-                        .author("Author3").isbn("13-123-4756")
+//                        .author("Author3")
+                        .isbn("13-123-4756")
                         .price(54.33).build());
 
         this.bookList.add(
                 Book.builder()
                         .id(4).title("Tytul4")
-                        .author("Author4").isbn("13-435-123")
+//                        .author("Author4")
+                        .isbn("13-435-123")
                         .price(67.66).build());
     }
 

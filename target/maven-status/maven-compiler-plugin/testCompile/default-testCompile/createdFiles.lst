@@ -1,7 +1,0 @@
-pl\comarch\camp\micro\book\store\services\impl\AuthenticationServiceTest.class
-pl\comarch\camp\micro\book\store\database\impl\UserDAOStub.class
-pl\comarch\camp\micro\book\store\configuration\TestConfiguration.class
-pl\comarch\camp\micro\book\store\database\impl\BookDAOStub.class
-pl\comarch\camp\micro\book\store\services\impl\GenericTest.class
-pl\comarch\camp\micro\book\store\services\impl\BasketServiceTest.class
-pl\comarch\camp\micro\book\store\validators\UserDataValidatorTest.class

@@ -1,30 +1,45 @@
 package pl.comarch.camp.micro.book.store.controllers.rest;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
-import pl.comarch.camp.micro.book.store.database.IBookDAO;
+import org.springframework.web.bind.annotation.*;
+import pl.comarch.camp.micro.book.store.database.repositories.BookRepository;
 import pl.comarch.camp.micro.book.store.model.Book;
+import pl.comarch.camp.micro.book.store.model.Book_;
 import pl.comarch.camp.micro.book.store.model.dto.BooksResponse;
 
-import java.util.List;
+import javax.transaction.Transactional;
+import javax.validation.Valid;
 import java.util.Optional;
 
 @RestController
 @RequestMapping(value = "/book")
 public class RestBookController {
 
-    @Autowired
-    IBookDAO bookDAO;
+    private final BookRepository bookRepository;
+
+    public RestBookController(BookRepository bookRepository) {
+        this.bookRepository = bookRepository;
+    }
+
+    private static Specification<Book> createSpecificationIsbn(String isbn) {
+        return (root, query, criteriaBuilder) ->
+                criteriaBuilder.equal(root.get(Book_.isbn), isbn);
+    }
+
+    private static Specification<Book> createPremiumPrice() {
+        return (Specification<Book>) (root, query, criteriaBuilder) ->
+                criteriaBuilder.greaterThan(root.get(Book_.price),
+                        Double.valueOf(25));
+    }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public ResponseEntity<Book> getBook(@PathVariable Integer id) {
-        Optional<Book> bookBox = this.bookDAO.getBookById(id);
-        if(bookBox.isPresent()) {
+        Optional<Book> bookBox = this.bookRepository.findById(id);
+        if (bookBox.isPresent()) {
             return ResponseEntity.status(HttpStatus.OK).body(bookBox.get());
         } else {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
@@ -32,9 +47,26 @@ public class RestBookController {
     }
 
     @RequestMapping(value = "", method = RequestMethod.GET)
-    public BooksResponse getAllBooks() {
+    public BooksResponse getAllBooks(@RequestParam(value = "isbn", required = false) String isbn, Pageable pageable) {
         BooksResponse response = new BooksResponse();
-        response.setBooks(this.bookDAO.getBookList());
+        Page<Book> criteria = this.bookRepository.findAll(
+                createSpecificationIsbn(isbn)
+                        .and(createPremiumPrice().or(
+                                (root, query, criteriaBuilder) ->
+                                        criteriaBuilder.equal(root.get(Book_.TITLE), "Criteria"))
+
+                        ), pageable);
+        response.setBooks(criteria.getContent());
         return response;
+    }
+
+    @PostMapping
+    @Transactional
+    public ResponseEntity<Book> createBook(@Valid @RequestBody Book book) {
+        if (bookRepository.existsByIsbn(book.getIsbn())) {
+            throw new RuntimeException();
+        }
+        Book savedBook = bookRepository.save(book);
+        return ResponseEntity.ok(savedBook);
     }
 }

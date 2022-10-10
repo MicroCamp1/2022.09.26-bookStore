@@ -18,12 +18,12 @@ public class RestOrderController {
     public OrderDTO getOrder(@PathVariable int id) {
         Order order = new Order();
         order.setId(id);
-
         User user = new User();
         user.setLogin("admin");
         user.setPassword("admin");
         order.setUser(user);
 
+        /*
         Position position1 = new Position();
         position1.setQuantity(5);
         position1.setBook(Book.builder()
@@ -39,7 +39,7 @@ public class RestOrderController {
                 .price(44.33).build());
 
         order.getPositions().add(position1);
-        order.getPositions().add(position2);
+        order.getPositions().add(position2);*/
 
         OrderDTO orderDTO = new OrderDTO();
         orderDTO.setId(order.getId());
