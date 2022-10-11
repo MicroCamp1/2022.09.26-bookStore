@@ -1,5 +1,7 @@
 package pl.comarch.camp.micro.book.store.controllers.rest;
 
+import lombok.RequiredArgsConstructor;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.domain.Specification;
@@ -17,13 +19,12 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping(value = "/book")
+@RequiredArgsConstructor
 public class RestBookController {
 
     private final BookRepository bookRepository;
 
-    public RestBookController(BookRepository bookRepository) {
-        this.bookRepository = bookRepository;
-    }
+    private final ApplicationEventPublisher applicationEventPublisher;
 
     private static Specification<Book> createSpecificationIsbn(String isbn) {
         return (root, query, criteriaBuilder) ->
@@ -36,7 +37,7 @@ public class RestBookController {
                         Double.valueOf(25));
     }
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+    @GetMapping(value = "/{id}")
     public ResponseEntity<Book> getBook(@PathVariable Integer id) {
         Optional<Book> bookBox = this.bookRepository.findById(id);
         if (bookBox.isPresent()) {
@@ -46,7 +47,7 @@ public class RestBookController {
         }
     }
 
-    @RequestMapping(value = "", method = RequestMethod.GET)
+    @GetMapping(value = "")
     public BooksResponse getAllBooks(@RequestParam(value = "isbn", required = false) String isbn, Pageable pageable) {
         BooksResponse response = new BooksResponse();
         Page<Book> criteria = this.bookRepository.findAll(
@@ -67,6 +68,7 @@ public class RestBookController {
             throw new RuntimeException();
         }
         Book savedBook = bookRepository.save(book);
+        applicationEventPublisher.publishEvent(new BookCreatedEvent(this, savedBook));
         return ResponseEntity.ok(savedBook);
     }
 }

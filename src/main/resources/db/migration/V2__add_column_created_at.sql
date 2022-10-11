@@ -1,0 +1,1 @@
+alter table books add created_at DATETIME null;

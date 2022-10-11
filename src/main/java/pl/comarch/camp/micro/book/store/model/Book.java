@@ -3,11 +3,11 @@ package pl.comarch.camp.micro.book.store.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.*;
-import lombok.experimental.Accessors;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+import java.util.Date;
 import java.util.Set;
 
 @Getter
@@ -16,9 +16,7 @@ import java.util.Set;
 @AllArgsConstructor
 @ToString
 @EqualsAndHashCode
-//@Accessors(fluent = true)
 @Builder
-//@Log4j2
 @Entity
 @Table(name = "BOOKS")
 public class Book {
@@ -30,7 +28,7 @@ public class Book {
     @NotEmpty
     private String title;
 
-    @OneToMany(mappedBy =  "book")
+    @OneToMany(mappedBy = "book")
     @JsonIgnoreProperties(value = {"book"}, allowSetters = true)
     private Set<Author> authors;
 
@@ -42,7 +40,6 @@ public class Book {
     @NotNull
     private double price;
 
-    /*public void cos() {
-        log.info("kjasgdkjhfas");
-    }*/
+    private Date createdAt;
+
 }

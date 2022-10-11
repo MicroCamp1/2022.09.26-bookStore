@@ -10,11 +10,11 @@ import pl.comarch.camp.micro.book.store.database.impl.BookDAOStub;
 import pl.comarch.camp.micro.book.store.database.impl.UserDAOStub;
 
 @Configuration
-@ComponentScan(basePackages = {
-        "pl.comarch.camp.micro.book.store.controllers",
-        "pl.comarch.camp.micro.book.store.services",
-        "pl.comarch.camp.micro.book.store.session"
-})
+//@ComponentScan(basePackages = {
+//        "pl.comarch.camp.micro.book.store.controllers",
+//        "pl.comarch.camp.micro.book.store.services",
+//        "pl.comarch.camp.micro.book.store.session"
+//})
 public class TestConfiguration {
     /*@Bean
     public IUserDAO userDAO() {
